@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/pet")
-@SessionAttributes("petList")
+@SessionAttributes("petList") //
 public class SessionAttributeController {
 	private static final Logger logger = Logger.getLogger(SessionAttributeController.class.getName());
 	
@@ -42,6 +42,7 @@ public class SessionAttributeController {
 			petList = new ArrayList<>();
 			session.setAttribute("petList", petList);
 			logger.info("created new petList as it was null and saved in session");
+			System.out.println("creat petList");
 		}
 		else
 		{
@@ -73,7 +74,7 @@ public class SessionAttributeController {
 		
 		OptionalInt maxPetid = petli.stream().mapToInt(p -> Integer.parseInt(p.getPetid())).max();
 		
-		int newPetid = maxPetid.orElse(0);
+		int newPetid = maxPetid.orElse(0) + 1;
 		pet.setPetid(String.valueOf(newPetid));
 		
 		petli.add(pet);
