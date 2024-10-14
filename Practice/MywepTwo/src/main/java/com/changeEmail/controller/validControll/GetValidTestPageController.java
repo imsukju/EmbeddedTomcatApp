@@ -15,7 +15,7 @@ public class GetValidTestPageController
 		return "valid/accountForm";
 	}
 	
-	@GetMapping("/validtithjson")
+	@GetMapping("/	")
 	public String getTestValidWithJson()
 	{
 		System.out.println("getTestValidWithJson");

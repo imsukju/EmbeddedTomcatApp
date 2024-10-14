@@ -23,10 +23,10 @@
     <div id="response"></div>
 
     <!-- 스크립트는 <body> 태그 아래에 두어야 함 -->
-		<!--웹 브라우저 콘솔에 출력해줌?-->
+	
     <script>
         function sendUserData() {
-            console.log("sendUserData 함수가 호출되었습니다."); 
+            console.log("sendUserData 함수가 호출되었습니다."); // 콘솛에 출력해주는 메소드
             // 사용자 입력값을 가져옵니다.
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
@@ -40,7 +40,7 @@
             };
 
             // XMLHttpRequest를 사용하여 POST 요청 보내기
-            const xhr = new XMLHttpRequest();
+            const xhr = new XMLHttpRequest(); // 비동기   객체는 브라우저에서 서버와 데이터를 주고받는 방법을 제공하며, 페이지를 새로고침하지 않고도 서버와의 데이터 교환을 가능하게 합니다. 
             xhr.open("POST", "${pageContext.request.contextPath}/valid/users", true); // POST 요청
             xhr.setRequestHeader("Content-Type", "application/json"); // JSON 데이터 전송
 
