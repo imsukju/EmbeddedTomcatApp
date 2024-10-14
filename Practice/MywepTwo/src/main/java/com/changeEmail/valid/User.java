@@ -1,6 +1,10 @@
 package com.changeEmail.valid;
 
 import lombok.*;
+
+import java.util.Arrays;
+
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -10,6 +14,7 @@ import jakarta.validation.constraints.Size;
 @AllArgsConstructor
 @ToString
 public class User {
+	
 	@NotBlank(message = "Username is required")
 	private String name;
 	
@@ -17,3 +22,4 @@ public class User {
     @Size(min = 6, message = "Password must be at least 6 characters long")
 	private String password;
 }
+

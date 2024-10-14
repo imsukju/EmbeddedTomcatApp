@@ -1,4 +1,6 @@
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.startup.Tomcat;
@@ -24,5 +26,12 @@ public class Main {
         tomcat.start();
         tomcat.getServer().await();  // 서버 대기
     }
+	
+	public void abc()
+	{
+		List<String> list = Arrays.asList("A", "B", "C");
+		list.forEach(item -> System.out.println(item));  // 각 요소를 출력
+
+	}
 	
 }

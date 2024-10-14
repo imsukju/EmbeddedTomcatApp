@@ -12,11 +12,20 @@ import org.springframework.web.multipart.support.StandardServletMultipartResolve
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.function.RouterFunction;
+import org.springframework.web.servlet.function.RouterFunctions;
+import org.springframework.web.servlet.function.ServerResponse;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+
+
+
+import com.changeEmail.handlefh.PersonFormHandler;
+import com.changeEmail.handlefh.PersonHandler;
 
 @Configuration
 @EnableWebMvc  // 웹 관련 설정 활성화
-@ComponentScan(basePackages = "com.changeEmail.controller")  // 컨트롤러 스캔
+@ComponentScan(basePackages = {"com.changeEmail.controller", "com.changeEmail.handlefh"})  // 컨트롤러 스캔
 public class WebConfig implements WebMvcConfigurer {
 
     @Bean
@@ -52,4 +61,43 @@ public class WebConfig implements WebMvcConfigurer {
         converters.add(new ResourceHttpMessageConverter());        
 
     }
+    @Bean
+    public RouterFunction<ServerResponse> personRotes(PersonHandler handler)
+    {
+    	return RouterFunctions.route().GET("/person/{id}", handler::getPerson)
+    			.GET("/people",handler::listPeople)
+    			.POST("/person",handler::createPerson).build();
+    }
+    
+    
+//    @Bean
+//    public RouterFunction<ServerResponse> routerFunction(
+//    		PersonFormHandler personFormHander)
+//    {
+//    	return RouterFunctions.route().GET("/person-form",personFormHander::renderPersonForm).build();
+//    }
+    
+    @Bean
+    public RouterFunction<ServerResponse> routerFunction2(
+    		PersonFormHandler personFormHander)
+    {
+    	return RouterFunctions.route().GET("/person-form", p ->
+    		ServerResponse.ok().render("handlefh/person")).build();
+    }
+    
+    
+
+//    @Bean
+//    public RouterFunction<ServerResponse> routerFuntion2()
+//    {
+//        RouterFunction<ServerResponse> route = RouterFunctions.route()
+//        	    .path("/person", b1 -> b1
+//        	        .nest(accept(MediaType.APPLICATION_JSON), b2 -> b2
+//        	            .GET("/{id}", handler::getPerson)
+//        	            .GET(handler::listPeople))
+//        	        .POST(handler::createPerson))
+//        	    .build();
+//    }
+    
+ 
 }
