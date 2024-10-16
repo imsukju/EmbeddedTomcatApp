@@ -2,12 +2,15 @@ package com.MyWepOne.dao.impl;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.MyWepOne.dao.UserAccountDao;
+import com.MyWepOne.entity.Bank;
 import com.MyWepOne.entity.Users;
 
 
@@ -41,6 +44,12 @@ public class UserAccountDaoimpl implements UserAccountDao{
         }
 
         return user;
+    }
+    
+    @Override
+    public List<Bank> getAllbanks(Users user)
+    {
+    	return user.getBanks();
     }
 
 

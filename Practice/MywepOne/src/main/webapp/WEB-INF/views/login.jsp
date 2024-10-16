@@ -14,6 +14,11 @@
         <input type="password" id="passwd" name="UserPasswd"><br>
         <button type="submit">Login</button>
     </form>
+	<br>
+	<form action="/download" method="get">
+		<button type="submit">파일다운로드</button>
+		
+	</form>
     <br>
     <a href="/register">회원가입</a>
 	<a href="/BankSystem">Use Bank System</a>

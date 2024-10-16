@@ -34,11 +34,7 @@ public class MywepController {
     	return "BankSystem"; 
     }
     
-    @GetMapping("/Deposit")
-    public String getDeposit()
-    {
-    	return "BankSystem/deposit";
-    }
+
     
     @GetMapping("/success")
     public String LoginSuccess() 
