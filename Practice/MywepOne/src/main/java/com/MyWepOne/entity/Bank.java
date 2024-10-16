@@ -17,9 +17,22 @@ public class Bank {
     @ManyToOne
     @JoinColumn(name = "REAL_ID")
 	private Users users;
-	private Long money;
+	private Long money = 0L;
 	
 	private String bankName;
 	private String bankAccount;
+	
+//	@Embedded
+//	BankDetail bankdetail;
+	
+	public void addmoney(Long ammount)
+	{
+		this.money = this.money += ammount;
+	}
+	
+	public void subtractionMoney(Long ammount)
+	{
+		this.money = this.money -= ammount;
+	}
 
 }

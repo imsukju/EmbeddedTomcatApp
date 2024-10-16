@@ -10,6 +10,10 @@
 	<form action="/Deposit" method="GET">
 	    <button type="Deposit">입금하기</button>
 	</form>
+	<form action="/Transfer" method="GET">
+	    <button type="Transfer">송금하기</button>
+	</form>
+	
 
 </body>
 </html>
