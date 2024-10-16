@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.apache.catalina.Context;
+import org.apache.catalina.core.ApplicationFilterChain;
 import org.apache.catalina.startup.Tomcat;
 
 public class Main {
@@ -31,6 +32,7 @@ public class Main {
 	{
 		List<String> list = Arrays.asList("A", "B", "C");
 		list.forEach(item -> System.out.println(item));  // 각 요소를 출력
+		ApplicationFilterChain a;
 
 	}
 	

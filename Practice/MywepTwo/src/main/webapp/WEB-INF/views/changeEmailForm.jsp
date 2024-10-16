@@ -3,6 +3,8 @@
 <html>
 <head>
     <title>Change Email</title>
+
+	<link rel="stylesheet" href="/resources/style.css" />
 </head>
 <body>
     <h2>Change Your Email Address</h2>

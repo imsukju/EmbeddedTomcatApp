@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
     <title>Submit Form</title>
+	<link rel="stylesheet" href="/resources/style.css" />
 </head>
 <body>
     <h2>Submit a Date</h2>

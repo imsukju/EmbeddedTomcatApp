@@ -14,7 +14,7 @@
 		-->
 
 	
-	<link rel="stylesheet" href="../../../../resources/css/style.css" />
+	<link rel="stylesheet" href="/resources/css/style.css" />
 
 </head>
 <body>

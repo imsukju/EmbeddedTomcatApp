@@ -17,8 +17,6 @@
         <label for="username">Name:</label>
         <input type="text" id="username" name="UserName"><br> <!-- 엔티티의 UserName 필드와 일치 -->
         
-        <label for="bankaccount">BankAccount:</label>
-        <input type="text" id="bankaccount" name="BankAccount"><br> <!-- 엔티티의 BankAccount 필드와 일치 -->
         
         <button type="submit">Register</button>
     </form>

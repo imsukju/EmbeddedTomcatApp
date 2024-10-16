@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -19,15 +20,15 @@ public class QUsers extends EntityPathBase<Users> {
 
     public static final QUsers users = new QUsers("users");
 
-    public final StringPath BankAccount = createString("BankAccount");
+    public final ListPath<Bank, QBank> banks = this.<Bank, QBank>createList("banks", Bank.class, QBank.class, PathInits.DIRECT2);
 
-    public final NumberPath<Long> RealID = createNumber("RealID", Long.class);
+    public final NumberPath<Long> realID = createNumber("realID", Long.class);
 
-    public final StringPath UserId = createString("UserId");
+    public final StringPath userId = createString("userId");
 
-    public final StringPath UserName = createString("UserName");
+    public final StringPath userName = createString("userName");
 
-    public final StringPath UserPasswd = createString("UserPasswd");
+    public final StringPath userPasswd = createString("userPasswd");
 
     public QUsers(String variable) {
         super(Users.class, forVariable(variable));

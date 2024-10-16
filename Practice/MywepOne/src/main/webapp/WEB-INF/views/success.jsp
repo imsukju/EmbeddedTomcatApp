@@ -7,4 +7,7 @@
 </head>
 <body>
     <h2>로그인성공</h2>
+	<form action="/afterlogin" method="GET">
+	    <button type="Home">홈으로가기</button>
+	</form>
 </body>

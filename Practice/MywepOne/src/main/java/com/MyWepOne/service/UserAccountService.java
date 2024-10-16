@@ -25,10 +25,10 @@ public class UserAccountService
 	@Qualifier("userAccountDaoImpl")
 	UserAccountDao userAccountDao;
 	
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabook");
+
 
 	
-	public void saveUser(Users user)
+	public void saveUser(Users user, EntityManagerFactory emf)
 	{
 	    EntityManager em = emf.createEntityManager(); //엔티티 매니저 생성
 
@@ -50,7 +50,7 @@ public class UserAccountService
 		}
 	}
 	
-	public boolean checkLogin(String id, String pw)
+	public Users checkLogin(String id, String pw, EntityManagerFactory emf)
 	{
 		
 		Users findid = userAccountDao.findByUserId(id, emf);
@@ -59,16 +59,16 @@ public class UserAccountService
 		{
 			if(findid.getUserPasswd().equals(pw))
 			{
-				return true;
+				return findid;
 			}
 		}
 		
 		else
 		{
-			return false;
+			return null;
 		}
 		
-		return false;
+		return null;
 
 	}
 	

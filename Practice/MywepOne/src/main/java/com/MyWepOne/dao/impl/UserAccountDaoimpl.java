@@ -28,7 +28,7 @@ public class UserAccountDaoimpl implements UserAccountDao{
         // JPQL 쿼리를 사용하여 userId로 사용자를 조회
     	EntityManager em = emf.createEntityManager();
     	
-        String jpql = "SELECT u FROM Users u WHERE u.UserId = :userId";
+        String jpql = "SELECT u FROM Users u WHERE u.userId = :userId";
         TypedQuery<Users> query = em.createQuery(jpql, Users.class);
         query.setParameter("userId", userId);
 

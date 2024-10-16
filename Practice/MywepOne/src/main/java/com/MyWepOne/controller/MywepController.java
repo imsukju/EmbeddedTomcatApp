@@ -45,5 +45,16 @@ public class MywepController {
     {
     	return "/success";
     }
+    
+    @GetMapping("/afterlogin")
+    public String getAfterlogin()
+    {
+    	return "/afterlogin";
+    }
+    @GetMapping("/CreatBank")
+    public String getAddAccount()
+    {
+    	return "/BankSystem/createBank";
+    }
 
 }
