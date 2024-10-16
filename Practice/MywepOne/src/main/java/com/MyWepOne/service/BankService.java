@@ -88,11 +88,12 @@ public class BankService {
 			if(bank != null)
 			{
 				bank.addmoney(-amount);
-				bankdao.subtractionMoney(bank, amount);
+				bankdao.subtractionMoney(bank, amount,em);
+				
 				
 				banks = bankdao.findByBankName(em, bankname);
 				Bank temp  = bankdao.findByBankAccountWithBankId(banks, bankaccount);
-				bankdao.addmoney(bank, amount);
+				bankdao.addmoney(bank, amount,em);
 				
 			}
 

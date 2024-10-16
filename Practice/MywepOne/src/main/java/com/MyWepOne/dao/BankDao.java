@@ -60,20 +60,15 @@ public class BankDao {
 	}
 	
 	
-	public void addmoney(Bank bank, Long ammount)
-	{
-
-
-		bank.setMoney(bank.getMoney()+ammount); 
+	public void addmoney(Bank bank, Long amount, EntityManager em) {
+	    bank.setMoney(bank.getMoney() + amount);
+	    em.merge(bank);  // 변경 사항 반영
 	}
-	
-	public void subtractionMoney(Bank bank, Long ammount)
-	{
 
-		bank.setMoney(bank.getMoney()-ammount); 
-
+	public void subtractionMoney(Bank bank, Long amount, EntityManager em) {
+	    bank.setMoney(bank.getMoney() - amount);
+	    em.merge(bank);  // 변경 사항 반영
 	}
-	
 	
 	
 
