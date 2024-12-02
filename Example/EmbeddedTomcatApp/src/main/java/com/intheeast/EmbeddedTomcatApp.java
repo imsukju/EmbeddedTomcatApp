@@ -10,7 +10,7 @@ public class EmbeddedTomcatApp {
 	public static void main(String[] args) throws Exception {
         // 임베디드 톰캣 생성 및 설정
         Tomcat tomcat = new Tomcat();
-        tomcat.setPort(8080);
+        tomcat.setPort(8081);
 
         // 웹 애플리케이션 컨텍스트 경로 설정
         String contextPath = "";

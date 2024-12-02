@@ -87,6 +87,7 @@ public class PostController {
         model.addAttribute("comments", comments);
         model.addAttribute("files", files);
         model.addAttribute("comment", new Comment()); // 새 댓글 작성 폼을 위해 빈 객체 추가
+
         return "post/detail";
     }
 
